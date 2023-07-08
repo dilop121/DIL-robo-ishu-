@@ -83,22 +83,7 @@ func main() {
 	// Log the message that bot started
 	log.Infof("[Bot] %s has been started...", b.Username)
 
-	// Set Commands of Bot
-	log.Info("Setting Custom Commands for PM...!")
-	_, err = b.SetMyCommands(
-		[]gotgbot.BotCommand{
-			{Command: "start", Description: "Starts the Bot"},
-			{Command: "help", Description: "Check Help section of bot"},
-		},
-		&gotgbot.SetMyCommandsOpts{
-			Scope:        gotgbot.BotCommandScopeAllPrivateChats{},
-			LanguageCode: "en",
-		},
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
+	// Set Command
 	// Loading Modules
 	alita.LoadModules(dispatcher)
 
